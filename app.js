@@ -1,4 +1,5 @@
 const imgs = document.querySelectorAll(".lightbox-img");
+const header = document.querySelector(".header");
 imgs.forEach((item) => {
   item.addEventListener("click", handelShowLightbox);
 });
@@ -72,7 +73,6 @@ function debounce(fn, ms) {
   };
 }
 
-const header = document.querySelector(".header");
 window.addEventListener("scroll", debounce(handleScroll, 20));
 
 function handleScroll() {
