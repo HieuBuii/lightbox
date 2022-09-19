@@ -87,6 +87,20 @@ function handleScroll() {
   }
 }
 
+//scroll
+window.addEventListener("scroll", handlerScroll);
+function handlerScroll() {
+  const windowTop = window.pageYOffset;
+  console.log(windowTop);
+  [...imgs].forEach((item) => {
+    if (windowTop >= item.offsetTop - item.offsetHeight / 2) {
+      item.classList.add("is-showed");
+    } else {
+      item.classList.remove("is-showed");
+    }
+  });
+}
+
 //progress
 
 window.addEventListener("scroll", handleProgress);

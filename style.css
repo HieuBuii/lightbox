@@ -39,13 +39,17 @@ html {
   font-size: 62.5%;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .progress {
   position: fixed;
   top: 48px;
   left: 0;
   height: 4px;
   width: 0%;
-  /* background-color: aqua; */
   background: linear-gradient(to right, rgb(120, 30, 246), rgb(7, 234, 26));
   transform: all 0.25s linear;
   border-top-right-radius: 2px;
@@ -123,6 +127,10 @@ html {
   cursor: zoom-in;
   max-width: 80%;
   margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.25s linear;
 }
 .modal {
   position: fixed;
@@ -134,7 +142,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
 }
 .modal-content {
   display: flex;
@@ -143,26 +150,32 @@ html {
   position: relative;
 }
 .modal-img {
-  width: 700px;
-  height: 500px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 100px auto 50px auto;
   padding: 0 10px;
 }
 .modal-content i {
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: #fff;
   cursor: pointer;
 }
-.modal-content img {
+.modal-img img {
   width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
   user-select: none;
 }
 
 .icon-close {
+  font-size: 3rem !important;
   position: absolute;
   top: -40px;
   right: -25px;
   /* padding: 5px; */
+}
+.is-showed {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
 }
